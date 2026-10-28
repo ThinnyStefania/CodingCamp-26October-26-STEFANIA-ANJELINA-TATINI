@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense & Budget Visualizer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense & Budget Visualizer</h1>
+
+        <!-- Total Saldo -->
+        <div class="balance-card">
+            <h2>TOTAL SALDO</h2>
+            <p id="total-balance">$0.00</p>
+        </div>
+
+        <!-- Form Tambah Transaksi -->
+        <div class="form-card">
+            <h3>Tambah Transaksi</h3>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="item-name">Nama Barang</label>
+                    <input type="text" id="item-name" placeholder="Contoh: Cilok" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Jumlah ($)</label>
+                    <input type="number" id="amount" step="0.01" placeholder="Contoh: 14.94" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Kategori</label>
+                    <select id="category" required>
+                        <option value="Food">Makanan (Food)</option>
+                        <option value="Transport">Transportasi (Transport)</option>
+                        <option value="Fun">Hiburan (Fun)</option>
+                    </select>
+                </div>
+                <button type="submit">Tambah Transaksi</button>
+            </form>
+        </div>
+
+        <!-- Kontainer Bawah: Daftar Transaksi & Grafik -->
+        <div class="bottom-section">
+            <div class="list-card">
+                <h3>Transaksi</h3>
+                <div id="transaction-list" class="scrollable-list"></div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Pengeluaran Berdasarkan Kategori</h3>
+                <canvas id="spending-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
